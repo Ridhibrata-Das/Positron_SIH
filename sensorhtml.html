@@ -1,0 +1,43 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positron | Sensor Data</title>
+    <link rel="stylesheet" href="sensorcss.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+ </head>
+ <body>
+    <div class="back-button" id="back-button">&#8592;</div>
+    <br>
+    <div class="real-time-graph">
+      <h4>Weather Forecast Graph</h4>
+      <div id="weather-chart"></div> <!--  weather -->
+      <div id="humidity-chart"></div> <!-- humidity lul -->
+      <div id="showers-chart"></div>
+
+    </div>
+    <div class="graph-container">
+      <div class="graph">
+         <h6>Soil Moisture</h6>
+         <canvas id="soilMoistureGraph"></canvas>
+      </div>
+      <div class="graph">
+         <h6>Temperature</h6>
+         <canvas id="temperatureGraph"></canvas>
+      </div>
+      <div class="graph">
+         <h6>Humidity</h6>
+         <canvas id="humidityGraph"></canvas>
+      </div>
+      <div class="graph">
+         <h6>Weather</h6>
+         <canvas id="weatherGraph"></canvas>
+      </div>
+   </div>
+    <script src="sensorjs.js"></script>
+    <script src="weathert.js"></script>
+    <script src="weatherh.js"></script>
+    <script src="weatherr.js"></script>
+
+ </body>
+ 

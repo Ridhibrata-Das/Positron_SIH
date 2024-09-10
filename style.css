@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+    display: flex;
+}
+
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h1 {
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.sidebar a {
+    color: #ddd;
+    padding: 1rem 0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #fff;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    transition: margin-left 0.3s ease-in-out;
+    width: 100%;
+}
+
+.main-content .card {
+    background-color: #222;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.main-content .card h2 {
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.main-content .reports {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-content .chart {
+    background-color: #444;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+}
+
+.main-content .chart h4 {
+    margin-bottom: 0.5rem;
+    color: #aaa;
+}
+
+.main-content.collapsed {
+    margin-left: 0;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Cross Icon */
+.menu-icon.close {
+    position: fixed;
+    left: 19px;
+    top: 1rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+/* Real-Time Graph Styles */
+.real-time-graph {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.real-time-graph h4 {
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.real-time-graph canvas {
+    width: 100%;
+    height: 300px; 
+}
