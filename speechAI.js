@@ -1,49 +1,54 @@
-// transcript div from the HTML
-const micButton = document.getElementById('micButton');
-const transcriptDiv = document.getElementById('transcript');
+// Modify speechAI.js to send user query to the backend and get a response from ChatGPT
 
-// Speech Recognition API
+const micIcon = document.getElementById('mic');
+const searchBar = document.getElementById('search-bar');
+const searchButton = document.getElementById('search-btn');
+
+const synth = window.speechSynthesis;
 const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-recognition.lang = 'en-US'; // Set the language
-recognition.interimResults = false; // We only care about the final result
 
-// listening
-micButton.addEventListener('click', () => {
-    recognition.start(); // Start speech recognition
+recognition.interimResults = false;
+recognition.lang = 'en-US';
+
+// Event listener to start speech recognition
+micIcon.addEventListener('click', () => {
+    recognition.start();
 });
 
-// recognized
-recognition.onresult = (event) => {
-    const transcript = event.results[0][0].transcript; // Get the spoken text
-    transcriptDiv.textContent = `You said: ${transcript}`; // Display the spoken text
-    
-    // processing
-    processAIResponse(transcript);
-};
+recognition.addEventListener('result', async (e) => {
+    const speechResult = e.results[0][0].transcript;
+    searchBar.value = speechResult;
+    const response = await sendQueryToBackend(speechResult);
+    speak(response);
+});
 
-// request to the backend
-function processAIResponse(query) {
-    // AI's response, API call
-    fetch('/ai-query', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query }) 
-    })
-    .then(response => response.json()) 
-    .then(data => {
-        const aiResponse = data.response; 
-        transcriptDiv.textContent = `AI Response: ${aiResponse}`; 
+// Event listener to handle text-based queries
+searchButton.addEventListener('click', async () => {
+    const userQuery = searchBar.value;
+    const response = await sendQueryToBackend(userQuery);
+    speak(response);
+});
 
-        // AI's response 
-        speak(aiResponse);
-    })
-    .catch(error => {
-        console.error('Error processing AI response:', error);
-    });
+// Function to handle the API request to the backend
+async function sendQueryToBackend(query) {
+    try {
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ question: query }),
+        });
+        const data = await response.json();
+        return data.answer;
+    } catch (error) {
+        console.error('Error fetching from backend:', error);
+        return 'I am having trouble processing your request.';
+    }
 }
 
-
-function speak(text) {
-    const utterance = new SpeechSynthesisUtterance(text); // Create a speech object
-    window.speechSynthesis.speak(utterance); // Speak out the text
+// Function to convert text to speech
+function speak(responseText) {
+    const utterance = new SpeechSynthesisUtterance(responseText);
+    synth.speak(utterance);
 }

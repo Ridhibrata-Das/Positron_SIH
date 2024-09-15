@@ -16,7 +16,7 @@
         <a href="index.html"><h1><b>POSITRON</b></h1></a>
         <a href="index.html">Home</a>
         <a href="sensorhtml.html">Sensor Data</a>
-        <a href="#">Recommendations</a>
+        <a href="recomendation.html">Recommendations</a>
         <a href="#">Alerts</a>
         <a href="#">Products</a>
         <a href="#">Reports</a>
@@ -43,46 +43,37 @@
           <br>
             <p>Sensor Data Real Time</p>
             <div class="reports">
-                <!-- Bekar charts -->
-                <div class="chart">
-                    <h4>Weather</h4>
-                    <p>128,197.72</p>
-                </div>
-                <div class="chart">
-                    <h4>Temperature</h4>
-                    <p>133,087.65</p>
-                </div>
-                <div class="chart">
-                    <h4>Soil Moisture</h4>
-                    <p>102,633.07</p>
-                </div>
-            </div>
+
+
+            <!-- Bekar charts -->
+<div class="chart">
+    <h4>Weather</h4>
+    <p id="weather-value">Loading...</p> <!-- Will be updated with precipitation data -->
+</div>
+<div class="chart">
+    <h4>Temperature</h4>
+    <p id="temperature-value">Loading...</p> <!-- Will be updated with temperature data -->
+</div>
+<div class="chart">
+    <h4>Soil Moisture</h4>
+    <p id="soil-moisture-value">Loading...</p> <!-- Will be updated with soil moisture data -->
+</div>
+
             <!-- real-time graph -->
             <div class="real-time-graph">
                 <h4>Real-Time Graph</h4>
                 <div id="realTimeGraph"></div>
             </div>
         </div>
+        <br>
+<!-- Reports Section -->
+<div class="reports">
+    <div class="chart" id="soil-moisture-alert">
+        <h4>Soil Moisture Alert</h4>
+        <p id="alert-message">No alert</p> <!-- Alert message will be updated here -->
+    </div>
+</div>
 
-        <!-- bekar card -->
-        <div class="card">
-            <h2>Reports Overview</h2>
-            <div class="reports">
-                <!-- more bekar charts -->
-                <div class="chart">
-                    <h4>Normal</h4>
-                    <p>4,542,375.45</p>
-                </div>
-                <div class="chart">
-                    <h4>Moderate</h4>
-                    <p>4,180,332.54</p>
-                </div>
-                <div class="chart">
-                    <h4>Dangerous</h4>
-                    <p>1,000,000</p>
-                </div>
-            </div>
-        </div>
     </div>
 
   
@@ -91,8 +82,8 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="serverc.js"></script>
     <script src="speechAI.js"></script>
-
-
+    <script src="numvalue.js"></script>
+    <script src="alerts.js"></script>
 
 
 </body>

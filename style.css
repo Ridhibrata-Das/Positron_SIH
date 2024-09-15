@@ -73,7 +73,7 @@ body {
 }
 
 .main-content .chart {
-    background-color: #444;
+    background-color: #887b7b;
     padding: 1rem;
     border-radius: 8px;
     width: 30%;
@@ -82,7 +82,7 @@ body {
 
 .main-content .chart h4 {
     margin-bottom: 0.5rem;
-    color: #aaa;
+    color: #aca0a0
 }
 
 .main-content.collapsed {
