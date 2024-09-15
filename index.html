@@ -5,23 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Positron | SensorData</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
+    <div class="sidebar">
         <br>
         <br>
-        <br>
-        <a href="index.html"><h1><b>POSITRON</b></h1></a>
-        <a href="index.html">Home</a>
-        <a href="sensorhtml.html">Sensor Data</a>
-        <a href="recomendation.html">Recommendations</a>
-        <a href="#">Alerts</a>
-        <a href="#">Products</a>
-        <a href="#">Reports</a>
-        <a href="#">Settings</a>
-        <a href="#">About Us</a>
+
+        <a href="index.html" id="group-name"><h1><b>POSITRON</b></h1></a>
+        <a href="index.html"><span class="material-symbols-outlined">
+            home </span> Home</a>
+        <a href="sensorhtml.html"><span class="material-symbols-outlined">
+            sensors
+            </span> Sensor Data</a>
+        <a href="#"><span class="material-symbols-outlined">
+            recommend
+            </span>  Suggestions</a>
+        <a href="#"><span class="material-symbols-outlined">
+            notifications_active
+            </span> Alerts</a>
+        <a href="#"><span class="material-symbols-outlined">
+            production_quantity_limits
+            </span>Products</a>
+        <a href="#"><span class="material-symbols-outlined">
+            lab_profile
+            </span>  Reports</a>
+        <a href="#"><span class="material-symbols-outlined">
+            settings
+            </span>  Settings</a>
+        <a href="#"><span class="material-symbols-outlined">
+            groups
+            </span> About Us</a>
     </div>
 
     <!-- Hamburger Icon -->
@@ -31,18 +47,26 @@
     <div class="main-content" id="main-content">
         <div class="card">
             <h2>Dashboard</h2>
-            <div>
+            <div class="searchtoolbar">
+
+
+                <!-- Location Input Section -->
+                <div class="location-input">
+                    <h4>Enter your location:</h4>
+                    <input type="text" id="location-input" placeholder="e.g., Salt Lake Sector 5, Kolkata">
+                    <button id="submit-location">Submit</button>
+                </div>
               
-              <button id="micButton">🎤</button>
-              <div id="transcript"></div> 
-          
-              
-              <input type="text" id="searchQuery" placeholder="Ask anything...">
+<button id="micButton"><span class="material-symbols-outlined">
+                mic</span></button>
+                <div id="transcript"></div> <input type="text" id="searchQuery" placeholder="Ask anything...">
               <button id="searchButton">Search</button>
           </div>
           <br>
-            <p>Sensor Data Real Time</p>
+            <br><p id="realtimesensordata">Real Time Sensor Data</p><br>
             <div class="reports">
+
+
 
 
             <!-- Bekar charts -->
