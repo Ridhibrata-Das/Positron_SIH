@@ -1,43 +1,47 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Positron | Sensor Data</title>
-    <link rel="stylesheet" href="sensorcss.css">
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Positron | Sensor Data</title>
+   <link rel="stylesheet" href="sensorcss.css">
+   <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+   <!-- Back button -->
+   <div class="back-button" id="back-button">&#8592;</div>
+   <br>
+   
+   <!-- Graph Container -->
+   <div class="graph-container">
+       <!-- Temperature Graph -->
+       <div class="graph">
+           <h6>Temperature</h6>
+           <div id="weather-chart"></div> <!-- First graph moved here -->
+       </div>
 
- </head>
- <body>
-    <div class="back-button" id="back-button">&#8592;</div>
-    <br>
-    <div class="real-time-graph">
-      <h4>Weather Forecast Graph</h4>
-      <div id="weather-chart"></div> <!--  weather -->
-      <div id="humidity-chart"></div> <!-- humidity lul -->
-      <div id="showers-chart"></div>
+       <!-- Humidity Graph -->
+       <div class="graph">
+           <h6>Humidity</h6>
+           <div id="humidity-chart"></div> <!-- Second graph moved here -->
+       </div>
 
-    </div>
-    <div class="graph-container">
-      <div class="graph">
-         <h6>Soil Moisture</h6>
-         <canvas id="soilMoistureGraph"></canvas>
-      </div>
-      <div class="graph">
-         <h6>Temperature</h6>
-         <canvas id="temperatureGraph"></canvas>
-      </div>
-      <div class="graph">
-         <h6>Humidity</h6>
-         <canvas id="humidityGraph"></canvas>
-      </div>
-      <div class="graph">
-         <h6>Weather</h6>
-         <canvas id="weatherGraph"></canvas>
-      </div>
+       <!-- Weather Graph -->
+       <div class="graph">
+           <h6>Weather</h6>
+           <div id="showers-chart"></div> <!-- Third graph moved here -->
+       </div>
    </div>
-    <script src="sensorjs.js"></script>
-    <script src="weathert.js"></script>
-    <script src="weatherh.js"></script>
-    <script src="weatherr.js"></script>
 
- </body>
- 
+   <!-- Soil Moisture Graph -->
+   <div class="graph-container">
+    <div class="graph">
+        <h6>Soil Moisture</h6>
+        <div id="moisture-chart"></div> <!-- Third graph moved here -->
+    </div>
+   </div>
+
+   <script src="sensorjs.js"></script>
+   <script src="weathert.js"></script> <!-- First graph script -->
+   <script src="weatherh.js"></script> <!-- Second graph script -->
+   <script src="weatherr.js"></script> <!-- Third graph script -->
+   <script src="soilsensor.js"></script> <!-- Fourth graph script -->
+</body>

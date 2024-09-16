@@ -77,10 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (moistureValue >= 55 && moistureValue <= 84.9) {
             alertMessageElement.textContent = 'Moderate moisture. No action needed.';
             alertContainer.style.backgroundColor = 'yellow';
-        } else if (moistureValue >= 35 && moistureValue <= 54.9) {
+        } else if (moistureValue >= 30 && moistureValue <= 54.9) {
             alertMessageElement.textContent = 'Optimal moisture level.';
             alertContainer.style.backgroundColor = 'green';
-        } else if (moistureValue >= 20 && moistureValue <= 34.9) {
+        } else if (moistureValue >= 20 && moistureValue <= 29.9) {
             alertMessageElement.textContent = 'Moisture level low. Consider watering soon.';
             alertContainer.style.backgroundColor = 'yellow';
         } else if (moistureValue < 20) {

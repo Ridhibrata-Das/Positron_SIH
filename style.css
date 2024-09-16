@@ -4,31 +4,14 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f1dc;
     color: #151509;
     display: flex;
 }
-.main-content .chart {
-    background-color: #fcfee6;
-    padding: 1rem;
-    border-radius: 8px;
-    width: 30%;
-    text-align: center;
-}
 
-.main-content .chart h4 {
-    margin-bottom: 0.5rem;
-    color: #100101;
-}
-
-.main-content.collapsed {
-    margin-left: 0;
-}
-
-
+/* Sidebar */
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -48,16 +31,15 @@ body {
     margin-bottom: 2rem;
     font-size: 100%;
     display: flex;
-    border-radius:20rem;
+    border-radius: 20rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
     padding: 1rem;
     background-color: rgb(252, 246, 217);
     align-self: center;
-    
 }
 
-.sidebar a{
+.sidebar a {
     color: #0c0c00;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 1rem 0;
@@ -65,20 +47,19 @@ body {
     font-size: 1.2em;
     transition: color 0.3s;
     display: flex;
-    
 }
 
 .sidebar a:hover {
     display: flex;
     color: #c17708;
-   transform: scaleX(1.3);
-
+    transform: scaleX(1.3);
 }
 
 .sidebar.hidden {
     transform: translateX(-80%);
 }
 
+/* Main Content Layout */
 .main-content {
     margin-left: 250px;
     padding: 2rem;
@@ -100,11 +81,90 @@ body {
     color: #140202;
 }
 
-.main-content .reports {
+/* Flexbox for Sensor Data (Weather, Temperature, Soil Moisture) */
+.sensor-data {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
+.main-content .chart {
+    background-color: #fcfee6;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 30%;  /* Each chart will take up 30% of the row */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0.3rem;
+}
+
+.main-content .chart h4 {
+    margin-bottom: 0.5rem;
+    color: #100101;
+}
+
+/* Real-Time Graph Styles */
+.real-time-graph {
+    margin-top: 2rem;
+    text-align: center;
+    background-color: #fcfee6;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.real-time-graph h4 {
+    margin-bottom: 1rem;
+    color: #150a0a;
+}
+
+.real-time-graph canvas {
+    width: 100%;
+    height: 300px; 
+}
+
+/* Soil Moisture Alert Layout */
+#soil-moisture-alert {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #fcfee6;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Search Toolbar */
+.searchtoolbar {
+    color: #0c0c00;
+    border-radius: 10rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 0.5rem;
+    background-color: rgb(250, 238, 224);
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: center;
+    border-radius: 1rem;
+    border: #4a2906;
+}
+
+#realtimesensordata {
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Location Input */
+.location-input {
+    display: flex;
+    margin-bottom: 1rem;
+}
 
 /* Hamburger Menu Icon */
 .menu-icon {
@@ -117,7 +177,6 @@ body {
     z-index: 10;
 }
 
-/* Cross Icon */
 .menu-icon.close {
     position: fixed;
     left: 19px;
@@ -125,40 +184,15 @@ body {
     font-size: 3rem;
     cursor: pointer;
 }
-/* Real-Time Graph Styles */
-.real-time-graph {
-    margin-top: 2rem;
-    text-align: center;
+
+/* Ensure flex for other elements */
+#temp, #weather, #sm {
+    display: flex;
 }
 
-.real-time-graph h4 {
-    margin-bottom: 1rem;
-    color: #150a0a;
-}
-
-.real-time-graph canvas {
+#soil-moisture-alert {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
     width: 100%;
-    height: 300px; 
-}
-.searchtoolbar{
-    color: #0c0c00;
-    border-radius: 10rem;
-    display:flexbox;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: flex;
-    flex-direction: ;
-  
-}
-Button {
-    padding: 0.2rem;
-    background-color: rgb(250, 238, 224);
-    display: flex;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   align-items: center;
-   border-radius: 1rem;
-   border: #4a2906;
-}
-#realtimesensordata{
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
