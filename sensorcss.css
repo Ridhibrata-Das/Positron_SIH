@@ -63,3 +63,37 @@ body {
        font-size: 20px;
    }
 }
+
+/* Axis Labels Styling */
+.axis text {
+    font-size: 12px;
+    fill: #000;  /* Axis text color */
+}
+
+/* Move axis labels away from graph lines */
+.axis .tick text {
+    text-anchor: middle;
+}
+
+.axis .x-axis text {
+    transform: translateY(15px);  /* Increase space between X-axis labels and graph */
+}
+
+.axis .y-axis text {
+    transform: translateX(-30px);  /* Increase space between Y-axis labels and graph */
+}
+
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
